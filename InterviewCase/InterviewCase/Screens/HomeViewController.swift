@@ -7,14 +7,8 @@
 
 import UIKit
 
-protocol DismissContainerView {
-    var didHide: DismissMapViewController? { get }
-}
 
-class HomeViewController: UIViewController, DismissContainerView {
-    
-    var didHide: DismissMapViewController?
-    
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     
@@ -26,12 +20,12 @@ class HomeViewController: UIViewController, DismissContainerView {
         super.viewWillAppear(animated)
        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let destVC = storyBoard.instantiateViewController(withIdentifier: "MapViewController")
             destVC.modalPresentationStyle = .overCurrentContext
             destVC.modalTransitionStyle = .crossDissolve
             self.present(destVC, animated: false, completion: nil)
-                }
+        }
     }
 }
 

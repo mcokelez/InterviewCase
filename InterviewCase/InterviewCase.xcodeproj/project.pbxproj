@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C18D09527FE1F890029E3DC /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C18D09427FE1F890029E3DC /* MenuController.swift */; };
 		5C18D09727FE1FD30029E3DC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C18D09627FE1FD30029E3DC /* HomeViewController.swift */; };
 		5C18D09927FE2B470029E3DC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C18D09827FE2B470029E3DC /* LocationManager.swift */; };
+		5C2970A0280072BC00099AEA /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C29709F280072BC00099AEA /* UIApplication+.swift */; };
 		5C333DF427FF396F00A3B1B1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C333DF327FF396F00A3B1B1 /* MapViewController.swift */; };
 		5C333DF827FF766C00A3B1B1 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C333DF727FF766C00A3B1B1 /* ScanViewController.swift */; };
 		5C333DFD27FF845300A3B1B1 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C333DFC27FF845300A3B1B1 /* AnimationViewController.swift */; };
@@ -41,9 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5C18D09427FE1F890029E3DC /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		5C18D09627FE1FD30029E3DC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5C18D09827FE2B470029E3DC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		5C29709F280072BC00099AEA /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		5C333DF327FF396F00A3B1B1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5C333DF727FF766C00A3B1B1 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		5C333DFC27FF845300A3B1B1 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +86,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C29709E280072A400099AEA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5C2970A62800C2B400099AEA /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5C2970A62800C2B400099AEA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5C29709F280072BC00099AEA /* UIApplication+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5C333DF927FF83C300A3B1B1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +126,6 @@
 		5C333DFB27FF841B00A3B1B1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				5C18D09427FE1F890029E3DC /* MenuController.swift */,
 				5C18D09627FE1FD30029E3DC /* HomeViewController.swift */,
 				5C333DF327FF396F00A3B1B1 /* MapViewController.swift */,
 				5C333DF727FF766C00A3B1B1 /* ScanViewController.swift */,
@@ -142,6 +157,7 @@
 		5CA836E327FDA10D0079CF24 /* InterviewCase */ = {
 			isa = PBXGroup;
 			children = (
+				5C29709E280072A400099AEA /* Utilities */,
 				5C333DFA27FF840D00A3B1B1 /* Manager */,
 				5C333DFB27FF841B00A3B1B1 /* Screens */,
 				5C333DF927FF83C300A3B1B1 /* Resources */,
@@ -182,6 +198,8 @@
 			dependencies = (
 			);
 			name = InterviewCase;
+			packageProductDependencies = (
+			);
 			productName = InterviewCase;
 			productReference = 5CA836E127FDA10D0079CF24 /* InterviewCase.app */;
 			productType = "com.apple.product-type.application";
@@ -254,6 +272,8 @@
 				Base,
 			);
 			mainGroup = 5CA836D827FDA10D0079CF24;
+			packageReferences = (
+			);
 			productRefGroup = 5CA836E227FDA10D0079CF24 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -297,11 +317,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C18D09527FE1F890029E3DC /* MenuController.swift in Sources */,
 				5C333DF827FF766C00A3B1B1 /* ScanViewController.swift in Sources */,
 				5CA836E527FDA10D0079CF24 /* AppDelegate.swift in Sources */,
 				5C333DF427FF396F00A3B1B1 /* MapViewController.swift in Sources */,
 				5C18D09927FE2B470029E3DC /* LocationManager.swift in Sources */,
+				5C2970A0280072BC00099AEA /* UIApplication+.swift in Sources */,
 				5CA836E727FDA10D0079CF24 /* SceneDelegate.swift in Sources */,
 				5C18D09727FE1FD30029E3DC /* HomeViewController.swift in Sources */,
 				5C333DFD27FF845300A3B1B1 /* AnimationViewController.swift in Sources */,

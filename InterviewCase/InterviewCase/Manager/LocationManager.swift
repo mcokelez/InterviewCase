@@ -9,10 +9,15 @@ import Foundation
 import CoreLocation
 import UIKit
 
-class LocationManager: NSObject  {
+protocol PermissionIsDenied : NSObject {
+    var isDenied : Bool {get set}
+}
+
+class LocationManager: NSObject, PermissionIsDenied {
     
     static let shared = LocationManager()
-    private let view = UIViewController()
+   
+    var isDenied: Bool = false
     
     private lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
@@ -28,6 +33,7 @@ class LocationManager: NSObject  {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
     }
+    
 }
 
 extension LocationManager : CLLocationManagerDelegate {
@@ -43,8 +49,8 @@ extension LocationManager : CLLocationManagerDelegate {
         case .authorizedAlways,.authorizedWhenInUse:
             locationManager.requestLocation()
         case .denied,.restricted:
-            presentSettingsAlertController(title: "Enable Notifications?",
-                                           message: "To use this feature you must enable notifications in settings")
+            self.presentSettingsAlertController(title: "Enable Notifications?",
+                                               message: "To use this feature you must enable notifications in settings")
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
         @unknown default:
@@ -52,22 +58,22 @@ extension LocationManager : CLLocationManagerDelegate {
         }
     }
     
-    func presentSettingsAlertController(title: String, message: String){
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let goToSettings = UIAlertAction(title: "Settings", style: .default)
-        { (_) in
-            guard let setttingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
-            if(UIApplication.shared.canOpenURL(setttingsURL))
-            {
-                UIApplication.shared.open(setttingsURL) { (_) in}
-            }
-        }
-        alertController.addAction(goToSettings)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in}))
-        view.present(alertController, animated: true)
-    }
-    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
     }
+    
+    func presentSettingsAlertController(title: String, message: String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let goToSettings = UIAlertAction(title: "Settings", style: .default, handler: {action in
+            UIApplication.shared.open(
+                URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+        })
+        alertController.addAction(goToSettings)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in}))
+        UIApplication.topViewController()?.present(alertController, animated: false, completion: nil)
+    }
+    
 }
+
+
+

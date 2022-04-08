@@ -8,26 +8,26 @@
 import UIKit
 import MapKit
 
-protocol DismissMapViewController {
-    var didHide: Bool {get set}
+protocol LocationPermissionIsDenied : AnyObject{
+    var isDenied: PermissionIsDenied? {get}
 }
 
-class MapViewController: UIViewController, DismissMapViewController {
-    
-    var didHide: Bool = false
+class MapViewController: UIViewController, LocationPermissionIsDenied {
     
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var map: MKMapView!
+    
+    var isDenied: PermissionIsDenied?
     
     override func viewDidLoad() {
         super.viewDidLoad()
       
         self.subViewsSetup()
-        
+      
         LocationManager.shared.getUserLocation { [weak self] location in
             DispatchQueue.main.async {
                 guard let self = self else {return}
-                
+               
                 let pin = MKPointAnnotation()
                 pin.coordinate = location.coordinate
                 
@@ -37,6 +37,7 @@ class MapViewController: UIViewController, DismissMapViewController {
                 self.map.addAnnotation(pin)
             }
         }
+        
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             self.openQRScannerView()
@@ -72,6 +73,6 @@ class MapViewController: UIViewController, DismissMapViewController {
         self.subView.layer.borderColor = CGColor.init(gray: 1, alpha: 1)
         self.subView.layer.borderWidth = 10
     }
+    
 }
-
 
