@@ -29,4 +29,4 @@
 ## Communication <a name="Communication"></a>
 - [Twitter](https://twitter.com/mavicokelez)
 - [Linkedln](https://www.linkedin.com/in/maviyecokelez/)
-- [Mail](maviyecokelez@gmail.com)
+- [maviyecokelez@gmail.com]
