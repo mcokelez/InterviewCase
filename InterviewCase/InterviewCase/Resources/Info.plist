@@ -21,5 +21,11 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Need location information</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Need location information</string>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) will use it to scan QRCode.</string>
 </dict>
 </plist>
