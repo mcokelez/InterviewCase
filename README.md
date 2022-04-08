@@ -27,5 +27,6 @@
 
 
 ## Communication <a name="Communication"></a>
-- [GitHub](https://github.com/mcokelez)
+- [Twitter](https://twitter.com/mavicokelez)
 - [Linkedln](https://www.linkedin.com/in/maviyecokelez/)
+- [Mail](maviyecokelez@gmail.com)
