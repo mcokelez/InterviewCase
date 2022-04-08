@@ -2,7 +2,7 @@
 
 # Table of contents
 1. [Tasks](#Tasks)
-2. [Used Methods and Libraries](#Used Methods and Libraries)
+2. [Used Methods and Libraries](#UsedMethodsandLibraries)
 3. [Installation](#Installation)
 4. [Communication](#Communication)
 
@@ -16,7 +16,7 @@
 - [ ] Turkey Map on the Screen
 - [ ] Black Color outside qr view border
 
-## Used Methods and Libraries<a name="Used Methods and Libraries"></a>
+## Used Methods and Libraries<a name="UsedMethodsandLibraries"></a>
 - AVFoundation
 - MApKit
 - CGAffineTransform
